@@ -1,5 +1,75 @@
 <resources>
-    <string name="app_name">Bellyful_App</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
+    <!-- General -->
+    <string name="blank">.</string>
+    <string name="app_name">Bellyful App</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_here">Register Here</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="or_login">Or login</string>
+    <string name="current_deliveries">Current Deliveries</string>
+
+    <!-- Nav Bar -->
+    <string name="new_jobs">New Deliveries</string>
+    <string name="current_jobs">Current Deliveries</string>
+    <string name="freezers">Freezers</string>
+    <string name="job_submit">Job Submit</string>
+    <string name="account_info">Account</string>
+
+    <!-- Delivery Fragments -->
+    <string name="i_can_do_this">I Can Do This!</string>
+    <string name="title_activity_current_jobs_fragment1">CurrentJobsFragment1</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="my_confirmed">My Confirmed</string>
+    <string name="my_outstanding">My Outstanding</string>
+    <string name="branch_outstanding">Branch Outstanding</string>
+    <string name="my_outstanding_deliveries">My Outstanding Deliveries</string>
+    <string name="branch_outstanding_deliveries">Branch Outstanding Deliveries</string>
+    <string name="arrow_left"><![CDATA[>]]></string>
+    <string name="call">Call</string>
+    <string name="text">Text</string>
+    <string name="my_confirmed_deliveries">My Confirmed Deliveries</string>
+    <string name="new_deliveries">New Deliveries</string>
+
+    <!-- Freezer Fragments -->
+    <string name="freezers_stock">Freezer Stock</string>
+    <string name="freezer_details">Freezer Details</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="freezer_stock">Freezer Stock</string>
+    <string name="meal_1">Meal 1</string>
+    <string name="meal_2">Meal 2</string>
+    <string name="meal_3">meal 3</string>
+    <string name="meal_name">Meal Name</string>
+    <string name="x2">x2</string>
+    <string name="minus">-</string>
+    <string name="_0">0</string>
+    <string name="add">+</string>
+    <string name="qty">Qty</string>
+    <string name="taken">Taken</string>
+    <string name="added">Added</string>
+    <string name="freezer_owner">Freezer Owner</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_note">Add Note</string>
+    <string name="update_freezer">Update Freezer</string>
+
+    <!-- Job Submit Fragment -->
+    <string name="job_submission">Add New Job</string>
+    <string name="first_Name">First name</string>
+    <string name="last_Name">Last Name</string>
+    <string name="suburb">Suburb</string>
+    <string name="city">City/ Town</string>
+    <string name="postcode">Postcode</string>
+    <string name="completed">Completed</string>
+
+    <string-array name="answer_array">
+        <item>Dog on Property?</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
 </resources>
