@@ -16,12 +16,14 @@
         app:layout_constraintTop_toTopOf="@+id/main_activity"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        app:titleTextColor="@color/color_Primary"
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/frameContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/login_bg"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
@@ -32,11 +34,15 @@
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            app:itemIconTint="@drawable/bottom_navigation_color_selector"
             app:layout_constraintBottom_toBottomOf="@+id/main_activity"
-            android:background="?android:attr/windowBackground"
+            android:background="@drawable/bottom_navigation_background"
+            android:elevation="8dp"
+            app:labelVisibilityMode="unlabeled"
             android:foreground="?attr/selectableItemBackground"
-            app:itemIconTint="@color/colorPrimaryDark"
             app:itemTextColor="@color/colorPrimaryDark"
             app:menu="@menu/bottom_nav_menu" />
 

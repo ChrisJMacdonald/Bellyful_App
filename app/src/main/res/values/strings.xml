@@ -19,7 +19,7 @@
     <string name="account_info">Account</string>
 
     <!-- Delivery Fragments -->
-    <string name="i_can_do_this">I Can Do This!</string>
+    <string name="i_can_do_this">Accept Requests</string>
     <string name="title_activity_current_jobs_fragment1">CurrentJobsFragment1</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -65,6 +65,11 @@
     <string name="city">City/ Town</string>
     <string name="postcode">Postcode</string>
     <string name="completed">Completed</string>
+    <string name="MealQTY">Meal Qty</string>
+    <string name="Meal">Meal</string>
+    <string name="Allergies">Allergies</string>
+    <string name="Diet">Diet</string>
+    <string name="Submit">Submit</string>
 
     <string-array name="answer_array">
         <item>Dog on Property?</item>

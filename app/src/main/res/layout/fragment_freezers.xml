@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FreezersFragment">
+
+    <TextView
+        android:id="@+id/freezer_details"
+        android:layout_marginTop="10dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/freezer_details"
+        android:textColor="@color/colorGrey"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/freezer_stock"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/freezer_stock"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="@color/colorGrey"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/freezer_mealQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/qty"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="@color/colorGrey"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+
+</LinearLayout>
