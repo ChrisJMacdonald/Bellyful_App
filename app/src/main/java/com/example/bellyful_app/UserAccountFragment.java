@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -66,6 +67,9 @@ public class UserAccountFragment extends Fragment {
         Button signOutTest = v.findViewById(R.id.signout);
         signOutTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Logging Out", Toast.LENGTH_SHORT);
+                toast.setGravity(0, 0, 0);
+                toast.show();
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), Login.class);
                 getActivity().startActivity(intent);
