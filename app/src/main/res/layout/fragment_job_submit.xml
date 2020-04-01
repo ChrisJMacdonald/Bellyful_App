@@ -29,11 +29,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputFirstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtFirstName"
                     android:hint="@string/first_Name"
@@ -41,13 +36,6 @@
                     android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtLastName"
@@ -57,13 +45,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtAddress"
                     android:hint="@string/address"
@@ -71,13 +52,6 @@
                     android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputSuburb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtSuburb"
@@ -87,13 +61,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputCity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtCity"
                     android:hint="@string/city"
@@ -101,13 +68,6 @@
                     android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputPostcode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtPostcode"
@@ -117,25 +77,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputMob"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtMob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone Number"
                     android:inputType="phone" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtEmail"
@@ -144,8 +91,6 @@
                     android:ems="10"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -164,11 +109,6 @@
                 android:textSize="25sp"
                 android:spinnerMode="dropdown" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputNumAdults"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtNumAdults"
                     android:layout_width="match_parent"
@@ -176,13 +116,6 @@
                     android:ems="10"
                     android:hint="Number of Adults"
                     android:inputType="number"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputUnder5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtUnder5"
@@ -192,13 +125,6 @@
                     android:hint="Children Under 5"
                     android:inputType="number"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputBetween5_10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtBetween5_10"
                     android:layout_width="match_parent"
@@ -207,13 +133,6 @@
                     android:hint="Children 5-10"
                     android:inputType="number"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputBetween11_17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtBetween11_17"
                     android:layout_width="match_parent"
@@ -221,8 +140,6 @@
                     android:ems="10"
                     android:hint="Children 11-17"
                     android:inputType="number"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -233,11 +150,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputDiet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtDiet"
                     android:layout_width="match_parent"
@@ -245,13 +157,6 @@
                     android:ems="10"
                     android:hint="@string/Diet"
                     android:inputType="text"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputAllergies"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/txtAllergies"
@@ -261,14 +166,6 @@
                     android:hint="@string/Allergies"
                     android:inputType="text"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputMeal1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtMeal1"
                     android:layout_width="match_parent"
@@ -277,13 +174,6 @@
                     android:ems="10"
                     android:hint="@string/Meal"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputMeal1Qty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <EditText
                     android:id="@+id/txtMeal1Qty"
                     android:layout_width="match_parent"
@@ -291,8 +181,6 @@
                     android:ems="10"
                     android:hint="@string/MealQTY"
                     android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnSend"
