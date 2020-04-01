@@ -17,9 +17,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+//import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.bellyful_app.MESSAGE";
+    //BottomNavigationView bottomNavigationView;
     /*BottomNavigationView bottomNavigationView; // Bottom navigation bar
     private ArrayList<JobData> newJobList = new ArrayList<>(); // New jobs to pass to the NewJobFragment
     private ArrayList<FreezerModel> freezerList = new ArrayList<>(); // Freezer info to pass to the FreezerFragment
@@ -30,19 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
     Fragment ft;
-    String currentUser = "a";
+    String a = "a";
 
-    //@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        //if(currentUser == "a"){
-            Intent loginintent = new Intent(MainActivity.this,Login.class);
-            startActivityForResult(loginintent, 2);
-        //}
-        // Get the Intent that started this activity and extract the string
+        Intent loginintent = new Intent(MainActivity.this,Login.class);
+        startActivityForResult(loginintent, 2);
 
     }
 
@@ -55,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         {
             String message = data.getStringExtra("MESSAGE");
             System.out.println(message);
+            Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
             //textView1.setText(message);
         }
     }
