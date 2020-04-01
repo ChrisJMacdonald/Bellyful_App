@@ -1,13 +1,13 @@
 package com.example.bellyful_app;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-
-
 import android.util.Log;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,12 +17,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-//import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.bellyful_app.MESSAGE";
-    //BottomNavigationView bottomNavigationView;
-    /*BottomNavigationView bottomNavigationView; // Bottom navigation bar
+    BottomNavigationView bottomNavigationView; // Bottom navigation bar
+    /*
     private ArrayList<JobData> newJobList = new ArrayList<>(); // New jobs to pass to the NewJobFragment
     private ArrayList<FreezerModel> freezerList = new ArrayList<>(); // Freezer info to pass to the FreezerFragment
     protected ArrayList <AcceptedJobModel> selectedJobList = new ArrayList<>(); // Jobs for the CurrentJobFragment
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
     Fragment ft;
-    String a = "a";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,52 @@ public class MainActivity extends AppCompatActivity {
         Intent loginintent = new Intent(MainActivity.this,Login.class);
         startActivityForResult(loginintent, 2);
 
+        //Bottom Navigation Bar
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        mToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle(R.string.new_deliveries);
     }
+
+
+        private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_new_jobs:
+                        getSupportActionBar().setTitle(R.string.new_deliveries);
+                        //loadNewJobsFragment();
+                        System.out.println("New Jobs");
+                        return true;
+                       case R.id.action_current_jobs:
+                           getSupportActionBar().setTitle(R.string.current_jobs);
+                    //Bundle contains jobs selected in the newJobFragment
+                   // Bundle currentJobsBundle = new Bundle();
+                   // currentJobsBundle.putParcelableArrayList("selectedJobList", selectedJobList);
+                   // ft = new CurrentJobsFragment();
+                   // ft.setArguments(currentJobsBundle);
+                   // loadFragment(ft);
+                    return true;
+                case R.id.action_freezers:
+                    getSupportActionBar().setTitle(R.string.freezers);
+                  //  loadFreezerFragment();
+                    return true;
+                case R.id.action_job_submit:
+                    getSupportActionBar().setTitle(R.string.job_submit);
+                  //  ft = new JobSubmitFragment();
+                  //  loadFragment(ft);
+                    return true;
+                case R.id.action_user:
+                    getSupportActionBar().setTitle(R.string.account_info);
+                 //   ft = new UserAccountFragment();
+                 //   loadFragment(ft);
+                    return true;
+                }
+                return false;
+            }
+        };
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -52,7 +96,9 @@ public class MainActivity extends AppCompatActivity {
         {
             String message = data.getStringExtra("MESSAGE");
             System.out.println(message);
-            Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT);
+            toast.setGravity(0, 0, 0);
+            toast.show();
             //textView1.setText(message);
         }
     }
@@ -72,25 +118,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-    //@Override
-    /*public void onStart() {
-        super.onStart();
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        System.out.println("Hello");
-        updateUI(currentUser);
-        System.out.println(currentUser);
-        currentUser = "b";
-        System.out.println("Goodbye");
-        System.out.println(currentUser);
-    }*/
-    /*public void sendMessage(View view) {
-        // Do something in response to button
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }*/
     public Connection connectionclass(){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
