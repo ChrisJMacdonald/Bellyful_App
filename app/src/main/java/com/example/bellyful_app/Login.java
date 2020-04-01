@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
-
     private Button login;
     private TextView registerHere;
     private EditText editTextUsername;
@@ -28,17 +27,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         login = findViewById(R.id.btnLogin);
         editTextUsername = findViewById(R.id.editTextUserEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         loginProgressBar = findViewById(R.id.loginProgressBar);
 
-
-
-
         login.setOnClickListener(new View.OnClickListener() {
-            @Override
+            //@Override
             public void onClick(View view) {
                 //Hide the virtual keyboard
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
@@ -52,8 +47,14 @@ public class Login extends AppCompatActivity {
 
                 loginProgressBar.setVisibility(View.GONE); //
 
-                Intent startMainIntent = new Intent(Login.this, MainActivity.class);
-                Login.this.startActivity(startMainIntent);
+                String message = usernameText;
+                Intent intent=new Intent();
+                intent.putExtra("MESSAGE",message);
+                setResult(2,intent);
+                finish();//finishing activity
+
+                //Intent startMainIntent = new Intent(Login.this, MainActivity.class);
+                //Login.this.startActivity(startMainIntent);
 
                 /*boolean isValid = validate(usernameText, passwordText);
                 if(isValid){

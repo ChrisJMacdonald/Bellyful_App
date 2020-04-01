@@ -1,15 +1,22 @@
 package com.example.bellyful_app;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+
+import android.util.Log;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.EditText;
-
+import android.widget.Toast;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.bellyful_app.MESSAGE";
@@ -23,24 +30,61 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
     Fragment ft;
+    String currentUser = "a";
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        Intent startLoginIntent = new Intent(MainActivity.this, Login.class);
-        MainActivity.this.startActivity(startLoginIntent);
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
-    }
-
-    @Override
+    //@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //if(currentUser == "a"){
+            Intent loginintent = new Intent(MainActivity.this,Login.class);
+            startActivityForResult(loginintent, 2);
+        //}
         // Get the Intent that started this activity and extract the string
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        // check if the request code is same as what is passed  here it is 2
+        if(requestCode==2)
+        {
+            String message = data.getStringExtra("MESSAGE");
+            System.out.println(message);
+            //textView1.setText(message);
+        }
+    }
+
+   /* public void updateUI(String currentUser){
+        if(currentUser == "a"){
+            //User not logged in
+            //Start login activity
+            Intent startLoginIntent = new Intent(MainActivity.this, Login.class);
+            MainActivity.this.startActivity(startLoginIntent);
+
+        }else{
+            //User is already logged in
+            //Start activity
+            Toast.makeText(MainActivity.this, "Logged in",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }*/
+
+    //@Override
+    /*public void onStart() {
+        super.onStart();
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+        System.out.println("Hello");
+        updateUI(currentUser);
+        System.out.println(currentUser);
+        currentUser = "b";
+        System.out.println("Goodbye");
+        System.out.println(currentUser);
+    }*/
     /*public void sendMessage(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, DisplayMessageActivity.class);
@@ -49,4 +93,24 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }*/
+    public Connection connectionclass(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Connection connection = null;
+        String ConnectionURL = null;
+        try {
+            Class.forName("net.sourceforge.jtds.jdbc.Driver");
+            ConnectionURL = "jdbc:jtds:sqlserver://programmingprojects.database.windows.net:1433;DatabaseName=Bellyful_DB;user=Oscar@programmingprojects;password=Acromantula7;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+            connection = DriverManager.getConnection(ConnectionURL);
+        }catch (SQLException se){
+            Log.e("error here 1 : ", se.getMessage());
+        }
+        catch(ClassNotFoundException e){
+            Log.e("error here 2 : ", e.getMessage());
+
+        }catch(Exception e){
+            Log.e("error here 3 : ", e.getMessage());
+        }
+        return connection;
+    }
 }
