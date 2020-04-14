@@ -78,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(ft);
                   //  loadFreezerFragment();
                     return true;
-                case R.id.action_job_submit:
-                    getSupportActionBar().setTitle(R.string.job_submit);
-                   ft = new JobSubmitFragment();
-                    loadFragment(ft);
-                    return true;
                 case R.id.action_user:
                     getSupportActionBar().setTitle(R.string.account_info);
                     ft = new UserAccountFragment();

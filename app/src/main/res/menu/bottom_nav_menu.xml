@@ -20,12 +20,6 @@
         android:title="@string/freezers"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_job_submit"
-        android:enabled="true"
-        android:icon="@drawable/ic_action_job_submit"
-        android:title="@string/job_submit"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/action_user"
         android:enabled="true"
         android:icon="@drawable/ic_action_user"
