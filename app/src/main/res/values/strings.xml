@@ -57,27 +57,11 @@
     <string name="add_note">Add Note</string>
     <string name="update_freezer">Update Freezer</string>
 
-    <!-- Job Submit Fragment -->
-    <string name="job_submission">Add New Job</string>
-    <string name="first_Name">First name</string>
-    <string name="last_Name">Last Name</string>
-    <string name="suburb">Suburb</string>
-    <string name="city">City/ Town</string>
-    <string name="postcode">Postcode</string>
-    <string name="completed">Completed</string>
-    <string name="MealQTY">Meal Qty</string>
-    <string name="Meal">Meal</string>
-    <string name="Allergies">Allergies</string>
-    <string name="Diet">Diet</string>
-    <string name="Submit">Submit</string>
-
     <string-array name="answer_array">
         <item>Dog on Property?</item>
         <item>Yes</item>
         <item>No</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
