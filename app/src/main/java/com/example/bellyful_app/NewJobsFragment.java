@@ -113,37 +113,31 @@ public class NewJobsFragment extends Fragment {
 
 
     public ArrayList<JobData> storedbinfo(){
-        boolean flag = true;
         try{
             con = connectionclass();
             if(con == null){
-                //Toast errortoast = Toast.makeText(MainActivity.this, "Check Internet Connection", Toast.LENGTH_SHORT);
-                //errortoast.setGravity(0, 0, 0);
-                //errortoast.show();
+                Toast errortoast = Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_SHORT);
+                errortoast.setGravity(0, 0, 0);
+                errortoast.show();
             }else{
-                String Query = "SELECT * FROM TEST_DELIVERIES";
-                String output = "";
+                String Query = "SELECT * FROM TEST_DELIVERIES WHERE status = 'New'";
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery(Query);
                 mJobList = new ArrayList<>();
                 while(rs.next()){
-                    output = rs.getString("name");
                     JobData jobdata = new JobData(rs.getString("name"),rs.getString("address"),rs.getString("phone"),rs.getString("food"));
                     mJobList.add(jobdata);
                     //Toast toast = Toast.makeText(MainActivity.this, output, Toast.LENGTH_SHORT);
                     //toast.setGravity(0, 0, 0);
                     //toast.show();
-
                 }
                 con.close();
             }
         }catch(Exception ex){
             Log.d("MyTag","SQL Error");
         }
-
         return mJobList;
     }
-
 
     public Connection connectionclass() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

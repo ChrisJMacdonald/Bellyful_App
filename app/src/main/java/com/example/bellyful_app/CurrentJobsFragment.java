@@ -1,13 +1,12 @@
 package com.example.bellyful_app;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +22,7 @@ public class CurrentJobsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private Bundle args;
     public CurrentJobsFragment() {
         // Required empty public constructor
     }
@@ -56,9 +55,21 @@ public class CurrentJobsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_current_jobs, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_current_jobs, container, false);
+        return v;
     }
+    public void onViewCreated (View view, Bundle savedInstanceState) {
+        final ViewPager viewPager = view.findViewById(R.id.currentJobsViewPager);
+        TabLayout tabLayout = view.findViewById(R.id.currentJobTabLayout);
+        CurrentJobViewPagerAdapter viewPagerAdapter = new CurrentJobViewPagerAdapter(getChildFragmentManager(), args);
+        //viewPagerAdapter.addFragment(new OutstandingJobTab(), "Current Jobs");
+        viewPagerAdapter.addFragment(new CurrentJobTab(), "Current Jobs");
+        viewPagerAdapter.addFragment(new OutstandingJobTab(), "My Outstanding");
+        viewPagerAdapter.addFragment(new BranchJobTab(), "Branch Outstanding");
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
 }

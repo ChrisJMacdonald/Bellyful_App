@@ -48,7 +48,7 @@ public class NewJobsRecyclerAdapter extends RecyclerView.Adapter<NewJobsRecycler
         viewHolder.phoneLabel.setText(currentItem.getPhone());
         viewHolder.foodLabel.setText(currentItem.getFood());
 
-        Log.d("MyTag","Hello");
+
         //viewHolder.foodLabel.setText(mJobList.get(position).getna);
     }
 

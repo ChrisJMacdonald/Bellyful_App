@@ -63,52 +63,27 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_new_jobs:
                         getSupportActionBar().setTitle(R.string.new_deliveries);
                         loadNewJobsFragment();
-                        /*try{
-                            con = connectionclass();
-                            if(con == null){
-                                Toast errortoast = Toast.makeText(MainActivity.this, "Check Internet Connection", Toast.LENGTH_SHORT);
-                                errortoast.setGravity(0, 0, 0);
-                                errortoast.show();
-                            }else{
-                                String Query = "SELECT * FROM USER_LOGIN";
-                                String output = "";
-                                Statement stmt = con.createStatement();
-                                ResultSet rs = stmt.executeQuery(Query);
-                                if(rs.next()){
-                                    output = rs.getString("uid");
-                                    //Toast toast = Toast.makeText(MainActivity.this, output, Toast.LENGTH_SHORT);
-                                    //toast.setGravity(0, 0, 0);
-                                    //toast.show();
-                                    con.close();
-                                }
-                            }
-                        }catch (Exception ex){
-
-                           Log.d("MyTag","SQL Error");
-
-                        }*/
-                        //System.out.println("New Jobs");
                         return true;
-                       case R.id.action_current_jobs:
-                           getSupportActionBar().setTitle(R.string.current_jobs);
-                    //Bundle contains jobs selected in the newJobFragment
-                   // Bundle currentJobsBundle = new Bundle();
-                   // currentJobsBundle.putParcelableArrayList("selectedJobList", selectedJobList);
-                    ft = new CurrentJobsFragment();
-                   // ft.setArguments(currentJobsBundle);
-                    loadFragment(ft);
-                    return true;
-                case R.id.action_freezers:
-                    getSupportActionBar().setTitle(R.string.freezers);
-                    ft = new FreezersFragment();
-                    loadFragment(ft);
-                  //  loadFreezerFragment();
-                    return true;
-                case R.id.action_user:
-                    getSupportActionBar().setTitle(R.string.account_info);
-                    ft = new UserAccountFragment();
-                    loadFragment(ft);
-                    return true;
+                    case R.id.action_current_jobs:
+                        getSupportActionBar().setTitle(R.string.current_jobs);
+                        //Bundle contains jobs selected in the newJobFragment
+                        // Bundle currentJobsBundle = new Bundle();
+                        // currentJobsBundle.putParcelableArrayList("selectedJobList", selectedJobList);
+                        ft = new CurrentJobsFragment();
+                        // ft.setArguments(currentJobsBundle);
+                        loadFragment(ft);
+                        return true;
+                    case R.id.action_freezers:
+                        getSupportActionBar().setTitle(R.string.freezers);
+                        ft = new FreezersFragment();
+                        loadFragment(ft);
+                      //  loadFreezerFragment();
+                        return true;
+                    case R.id.action_user:
+                        getSupportActionBar().setTitle(R.string.account_info);
+                        ft = new UserAccountFragment();
+                        loadFragment(ft);
+                        return true;
                 }
                 return false;
             }
