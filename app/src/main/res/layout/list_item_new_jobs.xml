@@ -53,5 +53,14 @@
             android:textSize="15sp" />
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/checkBoxJob"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:scaleX="2"
+        android:scaleY="2" />
+
 
 </LinearLayout>

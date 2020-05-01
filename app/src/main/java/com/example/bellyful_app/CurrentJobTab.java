@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.bellyful_app.JobData;
+import com.example.bellyful_app.connectionclass;
 import com.example.bellyful_app.R;
+import com.example.bellyful_app.JobData;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,6 +30,9 @@ public class CurrentJobTab extends Fragment {
     private ArrayList<JobData> mAllSelectedItems;
     //private ArrayList<JobData> mUserSelectedItems = new ArrayList<>();
     public Connection con;
+    connectionclass c = new connectionclass();
+    //Connection con =  c.con();
+
     public CurrentJobTab(){
         //Required empty public constructor
     }
@@ -56,7 +61,7 @@ public class CurrentJobTab extends Fragment {
 
     public ArrayList<JobData> storedbinfo(){
         try{
-            con = connectionclass();
+            con =  c.con();
             if(con == null){
                 Toast errortoast = Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_SHORT);
                 errortoast.setGravity(0, 0, 0);
@@ -81,24 +86,4 @@ public class CurrentJobTab extends Fragment {
         return mAllSelectedItems;
     }
 
-    public Connection connectionclass() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://programmingprojects.database.windows.net:1433;DatabaseName=Bellyful_DB;user=Oscar@programmingprojects;password=B311yfu1;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            connection = DriverManager.getConnection(ConnectionURL);
-        }catch (SQLException se){
-            Log.e("error here 1 : ", se.getMessage());
-        }
-        catch(ClassNotFoundException e){
-            Log.e("error here 2 : ", e.getMessage());
-
-        }catch(Exception e){
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
 }

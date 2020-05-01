@@ -21,11 +21,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.bellyful_app.JobData;
+import com.example.bellyful_app.connectionclass;
+import com.google.gson.Gson;
+
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.bellyful_app.MESSAGE";
     public Connection con;
+    String uid = "";
+
     BottomNavigationView bottomNavigationView; // Bottom navigation bar
+    connectionclass c = new connectionclass();
+    //Gson gson = new Gson();
+    //String connectionAsAString = gson.toJson(c);
+    //public String uid = "";
+
+
     /*
     private ArrayList<com.example.bellyful_app.JobData> newJobList = new ArrayList<>(); // New jobs to pass to the NewJobFragment
     private ArrayList<FreezerModel> freezerList = new ArrayList<>(); // Freezer info to pass to the FreezerFragment
@@ -39,10 +50,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //c.setuid("Hello There");
         setContentView(R.layout.activity_main);
         Intent loginintent = new Intent(MainActivity.this,Login.class);
+        //loginintent.putExtra("Connection", connectionAsAString);
+        //loginintent.putExtra("Connection",c);
         startActivityForResult(loginintent, 2);
+
+        //i.putExtra("puzzle", easyPuzzle); send
+        //String easyPuzzle = i.getStringExtra("puzzle"); recieve;
 
         //Bottom Navigation Bar
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -53,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.new_deliveries);
 
         //Load starting fragment
-        loadNewJobsFragment();
+        //loadNewJobsFragment();
     }
 
         private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -104,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
     public void loadFragment(Fragment fragment) {
         //For making loading fragments easier and cleaner
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putString("message", uid );
+        fragment.setArguments(bundle);
         ft.replace(R.id.frameContainer, fragment);
         ft.addToBackStack(null);
         ft.commit();
@@ -116,50 +135,11 @@ public class MainActivity extends AppCompatActivity {
         // check if the request code is same as what is passed  here it is 2
         if(requestCode==2)
         {
-            String message = data.getStringExtra("MESSAGE");
-            System.out.println(message);
-
-            //Toast toast = Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT);
-            //toast.setGravity(0, 0, 0);
-            //toast.show();
-
-            //textView1.setText(message);
+            uid = data.getStringExtra("MESSAGE");
+            //System.out.println(message);
+            Log.d("MyTag","Uid from main is set to " + uid);
+            loadNewJobsFragment();
         }
     }
 
-   /* public void updateUI(String currentUser){
-        if(currentUser == "a"){
-            //User not logged in
-            //Start login activity
-            Intent startLoginIntent = new Intent(MainActivity.this, Login.class);
-            MainActivity.this.startActivity(startLoginIntent);
-
-        }else{
-            //User is already logged in
-            //Start activity
-            Toast.makeText(MainActivity.this, "Logged in",
-                    Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
- /*   public Connection connectionclass(){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://programmingprojects.database.windows.net:1433;DatabaseName=Bellyful_DB;user=Oscar@programmingprojects;password=B311yfu1;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            connection = DriverManager.getConnection(ConnectionURL);
-        }catch (SQLException se){
-            Log.e("error here 1 : ", se.getMessage());
-        }
-        catch(ClassNotFoundException e){
-            Log.e("error here 2 : ", e.getMessage());
-
-        }catch(Exception e){
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }*/
 }
