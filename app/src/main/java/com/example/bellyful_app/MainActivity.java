@@ -22,7 +22,7 @@ import java.sql.Statement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.bellyful_app.JobData;
 import com.example.bellyful_app.connectionclass;
-import com.google.gson.Gson;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
     String uid = "";
 
     BottomNavigationView bottomNavigationView; // Bottom navigation bar
-    connectionclass c = new connectionclass();
-    //Gson gson = new Gson();
-    //String connectionAsAString = gson.toJson(c);
-    //public String uid = "";
 
 
     /*

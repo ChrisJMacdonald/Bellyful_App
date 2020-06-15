@@ -59,6 +59,18 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnOptions"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/lblJobFood"
+            android:background="@drawable/button_bg_empty"
+            android:text="@string/arrow_left"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </LinearLayout>

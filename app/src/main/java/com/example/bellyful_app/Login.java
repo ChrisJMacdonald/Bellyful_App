@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.bellyful_app.connectionclass;
-import com.google.gson.Gson;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Intent i = getIntent();
         setContentView(R.layout.activity_login);
 
@@ -97,7 +98,7 @@ public class Login extends AppCompatActivity {
                             errortoast.setGravity(0, 0, 0);
                             errortoast.show();
                             con.close();
-                            return;
+
                         }
 
                     }
