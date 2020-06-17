@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -72,7 +73,13 @@ public class UserAccountFragment extends Fragment {
 
 
 
-        Button signOutTest = v.findViewById(R.id.btnsignout);
+        //Button signOutTest = v.findViewById(R.id.btnsignout);
+
+        TextView signOutTest = v.findViewById(R.id.signout);
+
+
+
+
         signOutTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Logging Out", Toast.LENGTH_SHORT);

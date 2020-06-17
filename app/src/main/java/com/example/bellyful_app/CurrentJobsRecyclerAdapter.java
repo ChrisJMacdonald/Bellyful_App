@@ -83,6 +83,10 @@ public class CurrentJobsRecyclerAdapter extends RecyclerView.Adapter<CurrentJobs
         viewHolder.phoneLabel.setText(currentItem.getPhone());
         viewHolder.foodLabel.setText(currentItem.getFood());
 
+
+        //Button login;
+
+
        /* if(mCode == 1) {
             if (mOutstandingJobs.size() > 0) {
                 final AcceptedJobModel currentItem = mOutstandingJobs.get(position);
@@ -122,12 +126,27 @@ public class CurrentJobsRecyclerAdapter extends RecyclerView.Adapter<CurrentJobs
 
         public NewJobViewHolder(@NonNull View itemView) {
             super(itemView);
+            startButton =  itemView.findViewById(R.id.btnOptions);
             nameLabel = itemView.findViewById(R.id.lblJobName);
             addressLabel = itemView.findViewById(R.id.lblJobAddress);
             phoneLabel = itemView.findViewById(R.id.lblJobPhone);
             foodLabel = itemView.findViewById(R.id.lblJobFood);
+
+            //startButton.setOnClickListener((View.OnClickListener) this);
+
+            startButton.setOnClickListener(new View.OnClickListener() {
+                //@Override
+                public void onClick(View view) {
+                    startButton.setText("Done");
+                }
+            });
+
            // startButton = itemView.findViewById(R.id.btnStart);
            // completeButton = itemView.findViewById(R.id.btnComplete);
         }
+    }
+
+    public void onClick(View v) {
+
     }
 }
